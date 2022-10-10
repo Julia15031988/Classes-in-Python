@@ -1,0 +1,198 @@
+
+#OBJECTS AND CLASSES
+
+#1
+class MyClass:
+        def say_hello(self):
+        print ("Hello from Class Object")
+obj=MyClass()
+obj.say_hello()
+
+
+#2
+class MyClass:
+    def set (self,n):
+        print ("Attention! Getting the value!")
+        self.number = n
+    def get(self):
+        print ("The value of field", self.number)
+obj=MyClass()
+obj.set(100)
+obj.get()
+
+
+#3
+class MyClass:
+    pass
+obj=MyClass
+obj.number=100
+print ("The value of field", obj.number)
+
+
+#4
+class MyClass:
+    def __init__(self):
+        self.number = 0
+        print("We created class specimen")
+obj=MyClass()
+print ("the value of class atribute is", obj.number)
+
+
+
+#5
+class MyClass:
+    def set(self,n):
+        self.num=n
+    def get(self):
+        print("The value of atribute", self.num)
+
+    def __init__(self, n=0):
+        self.set(n)
+        print("we created class speicmen")
+        self.get()
+a=MyClass()
+b=MyClass(100)
+
+
+#6
+class MyClass:
+    def __init__(self):
+        print ("Hello everybody")
+    def __del__(self):
+        print ("Good bye")
+print ("Checking work of the destructor")
+obj=MyClass()
+print ("We created class speicmen. Now deleting it")
+del obj
+print ("All is done")
+
+
+#7
+#creating class
+class MyClass:
+    #atribute
+    name = " THE CLASS is MyClass"
+    #The method for setting  value for class atribute
+    def set(self,n):
+        self.nickname =n
+    #method for reflection of the meaning of the field of class atribute
+    def get(self):
+        print ("the value of the atribute is", self.nickname)
+    #the constructor
+    def __init__(self,n):
+        #setting the value for class atribute
+        self.set(n)
+        #reflect the message
+        print ("Created class specimen")
+        self.get()
+ #create 1 specimen
+green=MyClass("GREEN")
+ #appealing for the class atribute by class specimen
+print ("It belongs", green.name)
+#create 2 specimen
+red=MyClass("RED")
+print ("It belongs ", red.name)
+#getting valur to to the class atribute
+MyClass.name="Here could be your advertisement"
+#appealing to the class atributr by class specimen
+print ("Asking the red", red.name)
+print ("Asking the green", green.name)
+
+
+
+#8
+#atribute of class as OBJECT and aatribute of class specimen
+#creatin class
+class MyClass:
+    #class atributr
+    name = "THE CLASS is MyClass"
+    #method for setting the value for atributr nickname for class specimen
+    def set(self,n):
+        self.nickname=n
+    #method for reflection  the value  for atribute  nickname of class specimen
+    def get(self):
+        print ("THE value of the attribute is", self.nickname)
+     #constructor
+    def __init__(self,n):
+        #set the value to the atribute nickname of class specimen
+        self.set(n)
+        print("Creates class specimen")
+        #reflect the value of atribut nickname of class specimen
+        self.get()
+
+#create first specimen
+green = MyClass("GREEN")
+#Checking value of the attribute bu specimen green
+print ("It belongs", green.name)
+red=MyClass("RED")
+print ("It belongs ", red.name)
+#changing value of attribute name by green specimen
+green.name="HERE was GREEN"
+#checking bu RED specimen
+print ("The RED asking", red.name)
+#checking bu Green specimen
+print ("The GREEN asking", green.name)
+#changing attribute by MyClass Object
+MyClass.name = "Here could be your advertesiment"
+#checking by red
+print ("The RED asking", red.name)
+#checking by green
+print ("The GREEN asking", green.name)
+#deleting attribute for green
+del green.name
+print ("The GREEN asking", green.name)
+
+
+
+#9
+#create class
+class MyClass:
+    pass
+#creating specimen A
+A=MyClass()
+#creating specimen B
+B=MyClass()
+#Adding attribute "first" to A
+A.first = "THE A SPECIMEN"
+#Adding attribute "second" to B
+B.second= "THE B SPECIMEN"
+#Adding attribut "TOTAL" to class "My CLass"
+MyClass.total="THIS IS CLass MY CLASS"
+#checling the access to attributes "first" and "total"
+#by refering A specimen
+print (A.total, "->" , A.first)
+#checking access to attribute "second" by refering A specimen
+try:
+    print (A.second)
+except AttributeError:
+    print ("There are no such attribute in A specimen")
+#checking access to attributes "second" and "total" by refering B specimen
+print(B.total, "->", B.second)
+#checking access to attribute "first" by refering B specimen
+try:
+    print(B.first)
+except   AttributeError:
+    print ("There are no such attribute in B specimen")
+
+#deleting attribute "total" of the class "MyClass"
+del MyClass.total
+
+#checking access to the attribute  "total" by refering the  A specimen
+try:
+    print (A.total)
+except AttributeError:
+    print("There are no such attribute ")
+
+#checking access to the attribute "total" by refering the B specimen
+try:
+    print(B.total)
+except AttributeError:
+    print ("There are no such attribute")
+    
+#deleting attribute "first" of A specimen
+del A.first
+#checking access to the attribute "first" by refering A specimen
+try:
+    print(A.first)
+except AttributeError:
+    print ("There are no such attribute in A specimen")
